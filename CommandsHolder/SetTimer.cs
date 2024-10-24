@@ -16,17 +16,11 @@
 
             Console.WriteLine("Break is Done");
             Console.ReadLine();
-
-            
             
         }
-        
-        
     }
-
     
-    
-    public static  void GetTimer()
+    public static void GetTimer()
     {
         Thread.Sleep(TIME_INTERVAL * 60 * 1000);
         Console.WriteLine("Minutes: " + TIME_INTERVAL);
