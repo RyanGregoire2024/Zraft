@@ -9,7 +9,7 @@ namespace Main
         public static void Main(string[] args)
         {
             Commands command = new Commands();
-            RandomNum m = new RandomNum();
+            RandomNum r = new RandomNum();
 
             
             
@@ -18,22 +18,62 @@ namespace Main
 
             if (command1.Equals("/Math"))
             {
-                string op = m.getOperator();
+                string op = r.getOperator();
                 if (op == "+")
                 {
-                    int num1 = m.getRandomNum(1, 10);
-                    int num2 = m.getRandomNum(1, 11);
+                    int num1 = r.getRandomNum(1, 10);
+                    int num2 = r.getRandomNum(1, 11);
                     
                     Console.WriteLine($"What is: {num1} + {num2}");
                     int answer = int.Parse(Console.ReadLine());
 
-                    if (answer == m.Add(num1, num2))
+                    if (answer == r.Add(num1, num2))
                     {
-                        Console.WriteLine($"Correct That: {num1} + {num2} = {m.Add(num1, num2)}");
+                        Console.WriteLine($"Correct That: {num1} + {num2} = {r.Add(num1, num2)}");
                         Console.ReadLine();
                     }
                     
                     
+                }
+                else if (op.Equals("-"))
+                {
+                    int num1 = r.getRandomNum(1, 10);
+                    int num2 = r.getRandomNum(1, 11);
+                    
+                    Console.WriteLine($"What is: {num1} - {num2}");
+                    int answer = int.Parse(Console.ReadLine());
+
+                    if (answer == r.Sub(num1, num2))
+                    {
+                        Console.WriteLine($"Correct That: {num1} - {num2} = {r.Sub(num1, num2)}");
+                        Console.ReadLine();
+                    }   
+                } else if (op.Equals("*"))
+                {
+                    int num1 = r.getRandomNum(1, 10);
+                    int num2 = r.getRandomNum(1, 11);
+                    
+                    Console.WriteLine($"What is: {num1} * {num2}");
+                    int answer = int.Parse(Console.ReadLine());
+                    
+                    if (answer == r.Mul(num1, num2))
+                    {
+                        Console.WriteLine($"Correct That: {num1} + {num2} = {r.Mul(num1, num2)}");
+                        Console.ReadLine();
+                    }
+                } else if (op.Equals("/"))
+                {
+                    int num1 = r.getRandomNum(1, 10);
+                    int num2 = r.getRandomNum(1, 11);
+                    
+                    Console.WriteLine($"What is: {num1} / {num2}");
+                    int answer = int.Parse(Console.ReadLine());
+
+                    if (answer == r.Div(num1, num2))
+                    {
+                        Console.WriteLine($"Correct That: {num1} + {num2} = {r.Div(num1, num2)}");
+                        Console.ReadLine();
+                    }
                 }
             }
             
