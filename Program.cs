@@ -8,8 +8,35 @@ namespace Main
         {
             Commands command = new Commands();
             
+            
             Console.WriteLine("Enter Command 1: ");
             var command1 = Console.ReadLine();
+
+            if (command1.Equals("/Pom"))
+            {
+                Console.WriteLine("Timer of Pom Started");
+                Timer a = new Timer();
+                Timer.SetTimer();   
+                Timer.GetTimer();
+            }
+
+            Console.WriteLine("Would You Like to Continue or Stop: ");
+            var commandContinue = Console.ReadLine();
+            if (commandContinue.Equals("yes"))
+            {
+
+                Timer.BreakTimer();
+                Console.WriteLine("Break just Started");
+                Console.ReadLine();
+            }
+            else
+            {
+                Console.WriteLine("Timer of Pom Started");
+                Timer a = new Timer();
+                Timer.SetTimer();   
+                Timer.GetTimer();
+            }
+            
             
             if (Empty.IsEmpty(command1))
             {
@@ -20,6 +47,7 @@ namespace Main
                 command.Commands1(command1);
                 
             }
+            
             
             Empty m = new Empty();
             
