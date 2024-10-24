@@ -22,6 +22,7 @@
     
     public static void GetTimer()
     {
+        DateTime m = new DateTime();
         Thread.Sleep(TIME_INTERVAL * 60 * 1000);
         Console.WriteLine("Minutes: " + TIME_INTERVAL);
         Console.ReadLine();

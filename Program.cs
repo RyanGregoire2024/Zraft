@@ -1,17 +1,42 @@
 ﻿using System;
+using RandomMathDLL;
 
 namespace Main
 {
     class Program
-    { 
+    {
+        
         public static void Main(string[] args)
         {
             Commands command = new Commands();
+            RandomNum m = new RandomNum();
+
             
             
             Console.WriteLine("Enter Command 1: ");
             var command1 = Console.ReadLine();
 
+            if (command1.Equals("/Math"))
+            {
+                string op = m.getOperator();
+                if (op == "+")
+                {
+                    int num1 = m.getRandomNum(1, 10);
+                    int num2 = m.getRandomNum(1, 11);
+                    
+                    Console.WriteLine($"What is: {num1} + {num2}");
+                    int answer = int.Parse(Console.ReadLine());
+
+                    if (answer == m.Add(num1, num2))
+                    {
+                        Console.WriteLine($"Correct That: {num1} + {num2} = {m.Add(num1, num2)}");
+                        Console.ReadLine();
+                    }
+                    
+                    
+                }
+            }
+            
             if (command1.Equals("/Pom"))
             {
                 Console.WriteLine("Timer of Pom Started");
